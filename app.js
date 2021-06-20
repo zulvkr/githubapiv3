@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       response = await axios.get(`https://api.github.com/users/${username}`)
     } catch (error) {
-      if (404 === error.response.status) {
+      if (error.response.status === 404) {
         alert('Error')
         console.log(error.response)
       }
